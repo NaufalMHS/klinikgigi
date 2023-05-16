@@ -3,7 +3,8 @@
 @section('content')
 <div class="container-xxl flex-grow-1 container-p-y">
     <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"><a href="/admin-area"
-                class="a-breadcrumbs">Beranda</a> / <a href="/admin-area/akun" class="a-breadcrumbs">Data Akun</a> / </span>Edit</h4>
+                class="a-breadcrumbs">Beranda</a> / <a href="/admin-area/akun" class="a-breadcrumbs">Data Akun</a> /
+        </span>Edit</h4>
     <div class="card">
         <h5 class="card-header">
             Edit Pengguna
@@ -16,7 +17,8 @@
                         <div class="mb-3 row">
                             <label class="col-md-3 col-form-label">ID Akun</label>
                             <div class="col-md-9">
-                                <input class="form-control" type="text" name="id" required readonly value="{{ $account[0] -> id }}"/>
+                                <input class="form-control" type="text" name="id" required readonly
+                                    value="{{ $account[0] -> id }}" />
                                 @error('id')
                                 <div id="defaultFormControlHelp" class="form-text">
                                     {{ $message }}
@@ -29,7 +31,8 @@
                         <div class="mb-3 row">
                             <label class="col-md-3 col-form-label">Nama Pengguna</label>
                             <div class="col-md-9">
-                                <input class="form-control" type="text" name="name" required value="{{ old('name' ,$account[0] -> name) }}"/>
+                                <input class="form-control" type="text" name="name" required
+                                    value="{{ old('name' ,$account[0] -> name) }}" />
                                 @error('name')
                                 <div id="defaultFormControlHelp" class="form-text">
                                     {{ $message }}
@@ -42,7 +45,8 @@
                         <div class="mb-3 row">
                             <label class="col-md-3 col-form-label">Username</label>
                             <div class="col-md-9">
-                                <input class="form-control" type="email" name="email" required value="{{ old('email' ,$account[0] -> email) }}"/>
+                                <input class="form-control" type="email" name="email" required
+                                    value="{{ old('email' ,$account[0] -> email) }}" />
                                 @error('email')
                                 <div id="defaultFormControlHelp" class="form-text">
                                     {{ $message }}
@@ -55,18 +59,40 @@
                         <div class="mb-3 row">
                             <label class="col-md-3 col-form-label">Password</label>
                             <div class="col-md-9">
-                                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalGantiSandi">Ganti kata sandi</button>
-                                {{-- <input class="form-control" type="password" name="password" value="{{ old('password' ,$account[0] -> password) }}"/> --}}
+                                <button type="button" class="btn btn-warning" data-bs-toggle="modal"
+                                    data-bs-target="#modalGantiSandi">Ganti kata sandi</button>
+                                {{-- <input class="form-control" type="password" name="password" value="{{ old('password' ,$account[0] -> password) }}"/>
+                                --}}
                                 @error('password')
                                 <div id="defaultFormControlHelp" class="form-text">
                                     {{ $message }}
                                 </div>
                                 @enderror
                                 @if (Session::has('error_pass'))
-                                    <div id="defaultFormControlHelp" class="form-text">
-                                        {{ Session::get('error_pass') }}
-                                    </div>
+                                <div id="defaultFormControlHelp" class="form-text">
+                                    {{ Session::get('error_pass') }}
+                                </div>
                                 @endif
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div class="mb-3 row">
+                            <label class="col-md-3 col-form-label">No Telp</label>
+                            <div class="col-md-9">
+                                <input class="form-control" type="text" name="no_tlp" required
+                                    value="{{ old('no_tlp' ,$account[0] -> no_tlp) }}" />
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div class="mb-3 row">
+                            <label class="col-md-3 col-form-label">Alamat</label>
+                            <div class="col-md-9">
+                                <input class="form-control" type="text" name="alamat" required
+                                    value="{{ old('alamat' ,$account[0] -> alamat) }}" />
+
                             </div>
                         </div>
                     </div>
@@ -74,17 +100,17 @@
                         <div class="mb-3 row">
                             <label class="col-md-3 col-form-label">Foto</label>
                             <div class="col-sm-12 col-xl-6">
-                                <img src="{{ asset('../img/account/'.$account[0] -> profile_pict) }}" alt="Pratinjau Gambar..." class="d-block rounded img-fluid mb-3" id="uploadedAvatar" style="max-height: 300px;" />
+                                <img src="{{ asset('../img/account/'.$account[0] -> profile_pict) }}"
+                                    alt="Pratinjau Gambar..." class="d-block rounded img-fluid mb-3" id="uploadedAvatar"
+                                    style="max-height: 300px;" />
                                 <div class="button-wrapper">
                                     <label for="upload" class="btn btn-primary me-2 mb-4" tabindex="0">
                                         <span class="d-none d-sm-block">Pilih Foto</span>
                                         <i class="bx bx-upload d-block d-sm-none"></i>
-                                        <input name="foto" type="file" id="upload"
-                                            class="account-file-input" hidden
-                                            accept="image/png, image/jpeg"/>
+                                        <input name="foto" type="file" id="upload" class="account-file-input" hidden
+                                            accept="image/png, image/jpeg" />
                                     </label>
-                                    <button type="button"
-                                        class="btn btn-outline-secondary account-image-reset mb-4">
+                                    <button type="button" class="btn btn-outline-secondary account-image-reset mb-4">
                                         <i class="bx bx-reset d-block d-sm-none"></i>
                                         <span class="d-none d-sm-block">Reset</span>
                                     </button>

@@ -131,7 +131,9 @@ class AkunController extends Controller
             $validated = $request->validate([
                 'name' => 'required|max:255',
                 'email' => ['required', 'email:dns', Rule::unique('users')->ignore($request->id)],
-                'profile_pict' => 'required'
+                'profile_pict' => 'required',
+                'no_tlp' => 'required|max:13',
+                'alamat' => 'required|max:255',
             ]);
 
             User::deleteImage($request->id);
@@ -140,6 +142,9 @@ class AkunController extends Controller
             $validated = $request->validate([
                 'name' => 'required|max:255',
                 'email' => ['required', 'email:dns', Rule::unique('users')->ignore($request->id)],
+
+                'no_tlp' => 'required|max:13',
+                'alamat' => 'required|max:255',
             ]);
         }
 
@@ -199,7 +204,16 @@ class AkunController extends Controller
             return redirect()->back()->with('message', 'Terjadi kesalahan dalam pencarian akun.');
         }
     }
+    public function account_detail()
+    {
+        $account = User::where('id', Auth::user()->id)->get();
 
+        return view('admin.account_details', [
+            'title' => 'Informasi Pengguna',
+            'menu' => 'pengguna',
+            'account' => $account
+        ]);
+    }
     public function login(Request $request)
     {
         $credentials = $request->validate([
