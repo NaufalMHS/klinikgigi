@@ -39,6 +39,10 @@ class Appointment extends Model
     {
         return $this->belongsTo(User::class, 'user_id', 'id');
     }
+    public function dokter()
+    {
+        return $this->belongsTo(Dokter::class, 'dokter_id');
+    }
 
     //Generate Automatic ID
     public static function pasienGenerateID()

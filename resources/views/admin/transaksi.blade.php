@@ -2,8 +2,7 @@
 
 @section('content')
 <div class="container-xxl flex-grow-1 container-p-y">
-    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"><a href="/admin-area"
-                class="a-breadcrumbs">Beranda</a> /</span> Data Transaksi</h4>
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"><a href="/admin-area" class="a-breadcrumbs">Beranda</a> /</span> Data Transaksi</h4>
     @include('admin.layout.alert')
     <div class="card">
         <h5 class="card-header">
@@ -22,8 +21,7 @@
                                 <form action="/admin-area/pasien" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="input-group">
-                                        <input required type="text" id="cari" class="form-control" name="cari"
-                                            placeholder="Masukkan keyword...">
+                                        <input required type="text" id="cari" class="form-control" name="cari" placeholder="Masukkan keyword...">
                                         <button class="btn btn-outline-primary" type="submit">Cari</button>
                                     </div>
                                     @error('judul')
@@ -68,7 +66,14 @@
                         <td>{{ $data -> fee_doctor }}</td>
                         <td>{{ $data -> fee_hospital }}</td>
                         <td>{{ $data -> total }}</td>
-                        <td>{{ $data -> status }}</td>
+                        <td> @if ($data['status'] == 2)
+                            {{ 'Payment Completed' }}
+                            @elseif ($data['status'] == 1)
+                            {{ 'Waiting Payment' }}
+                            @else
+                            {{ 'N/A' }}
+                            @endif
+                        </td>
                         <td>
 
                             <!-- <a class="btn btn-sm btn-success"

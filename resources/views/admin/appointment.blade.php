@@ -64,8 +64,16 @@
                         <th scope="row">{{ $loop -> iteration }}</th>
                         <td>{{ $data -> date }}</td>
                         <td>{{ $data -> time }}</td>
-                        <td>{{ $data -> status }}</td>
-                        <td>{{ $data -> dokter_id }}</td>
+                        <td>@if ($data['status'] == 2)
+                            {{ 'Payment Completed' }}
+                            @elseif ($data['status'] == 1)
+                            {{ 'Waiting Payment' }}
+                            @else
+                            {{ 'N/A' }}
+                            @endif
+                        </td>
+                        <td>{{ $data->dokter->nama_dokter }}</td>
+
                         <td>{{ $data -> deskripsi }}</td>
                         <td>
 

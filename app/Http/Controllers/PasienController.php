@@ -24,7 +24,7 @@ class PasienController extends Controller
         $appointment->deskripsi = $data['deskripsi'];
         $appointment->date = $data['date'];
         $appointment->time = $data['time'];
-        $appointment->status = 2; // set to waiting payment
+        $appointment->status = 1; // set to waiting payment
         $appointment->save();
 
 

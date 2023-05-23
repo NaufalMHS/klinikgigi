@@ -17,7 +17,7 @@
                     <div class="col-sm-5 text-center text-sm-left">
                         <div class="card-body pb-0 px-0 px-md-4">
                             <img src="{{ asset('admin/img/illustrations/man-with-laptop-light.png') }}" height="140"
-                                alt="View Badge User"/>
+                                alt="View Badge User" />
                         </div>
                     </div>
                 </div>
@@ -31,21 +31,7 @@
                 </div>
                 <div class="card-body">
                     <ul class="p-0 m-0">
-                        <li class="d-flex mb-4 pb-1">
-                            <div class="avatar flex-shrink-0 me-3">
-                                <span class="bx bx-task"></span>
-                            </div>
-                            <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                <div class="me-2">
-                                    <h6 class="mb-0">Agenda Kegiatan</h6>
-                                </div>
-                                <div class="user-progress d-flex align-items-center gap-1">
-                                    <h6 class="mb-0"></h6>
-                                    <span class="text-muted">Data</span>
-                                    <a href="/admin-area/agenda-kegiatan" class="btn btn-sm btn-outline-primary">Open</a>
-                                </div>
-                            </div>
-                        </li>
+
                         <li class="d-flex mb-4 pb-1">
                             <div class="avatar flex-shrink-0 me-3">
                                 <span class="bx bx-info-circle"></span>
@@ -115,43 +101,19 @@
             <div class="card h-100">
                 <div class="card-header">
                     <div class="card-title mb-0">
-                        <h5 class="m-0 me-2">Website Traffic (Per Week)</h5>
+                        <h5 class="m-0 me-2"></h5>
                     </div>
                 </div>
                 <div class="card-body px-0">
                     <div class="tab-content p-0">
                         <div class="tab-pane fade show active">
-                            <div class="d-flex p-4 pt-3">
-                                <div>
-                                    <small class="text-muted d-block">Today Traffic</small>
-                                    <div class="d-flex align-items-center">
-                                        <h6 class="mb-0 me-1">{{ count($countervisit[0]) }} Visits</h6>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="profileReportChart"></div>
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="col-12 col-lg-12 order-3 order-md-3 order-lg-2 mb-4">
-            <div class="card overflow-hidden mb-4">
-                <div class="card-header">
-                    <div class="card-title mb-0">
-                        <h5 class="m-0 me-2">Preview Website</h5>
-                    </div>
-                </div>
-                <div class="card-body px-0">
-                    <div class="container">
-                        <div>
-                            <embed src="../" width="100%" height="1000" onload="getUrl()">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
 <!-- / Content -->

@@ -2,12 +2,11 @@
 
 @section('content')
 <div class="container-xxl flex-grow-1 container-p-y">
-    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"><a href="/admin-area"
-                class="a-breadcrumbs">Beranda</a> /</span> Informasi Umum</h4>
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"><a href="/admin-area" class="a-breadcrumbs">Beranda</a> /</span> Informasi Umum</h4>
     @include('admin.layout.alert')
     <div class="card mb-4">
         <h5 class="card-header">
-            Tentang Informatika
+            Tentang Informasi Umum
         </h5>
         <div class="row p-4">
             <div class="col-sm-12 col-md-4 mb-4">
@@ -98,11 +97,9 @@
                                     <label for="upload" class="btn btn-primary me-2 mb-4" tabindex="0">
                                         <span class="d-none d-sm-block">Pilih Foto</span>
                                         <i class="bx bx-upload d-block d-sm-none"></i>
-                                        <input name="foto" type="file" id="upload" class="account-file-input" hidden
-                                            accept="image/png, image/jpeg" />
+                                        <input name="foto" type="file" id="upload" class="account-file-input" hidden accept="image/png, image/jpeg" />
                                     </label>
-                                    <button type="button"
-                                        class="btn btn-outline-secondary account-image-reset mb-4">
+                                    <button type="button" class="btn btn-outline-secondary account-image-reset mb-4">
                                         <i class="bx bx-reset d-block d-sm-none"></i>
                                         <span class="d-none d-sm-block">Reset</span>
                                     </button>
